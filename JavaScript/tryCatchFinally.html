@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TryCatch</title>
+</head>
+<body>
+    <script>
+        //=====================================> example 1 
+        // try{
+        //     throw "hello i am error"
+        //     console.log("this is not executed ");
+        // }
+        // catch(e){
+        //     console.warn(e,"this is an custom error");
+        // }
+        // console.log("very important thing to run ")
+
+        //=====================================> example 2
+        const num= 10;
+        try{
+            num=num+20;
+        }
+        catch(e){
+            console.warn("constant error",e);
+            
+        }
+        finally{
+            console.log("is num changed?", num );
+        }
+    
+    </script>
+</body>
+</html>
