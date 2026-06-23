@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project_jQuery</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        color: white;
+    }
+
+    /* Button */
+
+    .btn {
+        padding: 12px 22px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 12px 30px rgba(139, 92, 246, 0.5);
+    }
+
+    /* Character Name */
+
+    .box {
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    .box h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Image Container */
+
+    .box1 {
+        margin-top: 25px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Character Image */
+
+    .box1 img {
+        width: 350px;
+        max-width: 90%;
+        border-radius: 20px;
+        object-fit: cover;
+        border: 4px solid rgba(255, 255, 255, 0.15);
+
+        box-shadow:
+            0 0 20px rgba(59, 130, 246, 0.4),
+            0 0 50px rgba(139, 92, 246, 0.3);
+
+        transition: 0.4s;
+    }
+
+    .box1 img:hover {
+        transform: scale(1.03);
+        box-shadow:
+            0 0 30px rgba(59, 130, 246, 0.7),
+            0 0 70px rgba(139, 92, 246, 0.6);
+    }
+
+    /* Card Effect */
+
+    .box,
+    .box1 {
+        animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card {
+        margin-top: 30px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(15px);
+        padding: 30px;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+</style>
+
+<body>
+    <button class="btn">Click to get random star war character</button>
+    <div class="card">
+        <div class="box"></div>
+        <div class="box1"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <script>
+        RandomNumber = Math.floor(Math.random() * 88);
+        console.log(`${RandomNumber} is the number generated `);
+        $(document).ready(function () {
+            // let webUrl = `https://akabab.github.io/starwars-api/api/id/${RandomNumber}.json`
+            // console.log(webUrl);
+            $("button.btn").on("click", function () {
+
+                $(".box").html("<h2>Loading...</h2>");
+                $(".box1").html("");
+
+                let randomNumber = Math.ceil(Math.random() * 88) ;
+
+                $.get(`https://akabab.github.io/starwars-api/api/id/${randomNumber}.json`,
+                    function (data) {
+
+                        $(".box").html(`<h1>${data.name}</h1>`);
+                        $(".box1").html(`<img src="${data.image}" alt="${data.name}">`);
+
+                    }
+                );
+            });
+
+
+        })
+    </script>
+</body>
+
+</html>
