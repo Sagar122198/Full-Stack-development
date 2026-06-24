@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete_DOM</title>
+</head>
+<body>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima ad ea vero reiciendis consectetur, hic iusto eaque deserunt sint vel quidem nulla, sunt iste necessitatibus expedita quod dignissimos nihil excepturi.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas blanditiis suscipit commodi, ipsum, sit cupiditate ullam vero, fuga itaque hic quo! Odio aperiam quo sunt mollitia ipsa minus, illo ad!
+        </p>
+        <p class="last">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam facere cumque eius recusandae ipsa ea molestiae, temporibus perferendis soluta odit accusamus, explicabo minima vel ab? Tenetur ducimus ipsam repellat veritatis.
+        </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("div p.last").remove();
+            $("div").empty();
+
+        });
+    </script>
+</body>
+</html>
