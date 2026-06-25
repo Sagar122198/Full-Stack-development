@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+</head>
+<body>
+   <div class="button">
+
+   </div>
+   <button>Click the button</button>;
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // this can be used when it is already defiend above------------------>
+            $("button").on("click",function(){
+                console.log("button was clicked");
+            });
+            // this can be used for dynamic buttons------------------>
+            $(document).on("click","button",function(){
+                console.log("button was clicked for the #2");
+            });
+            $("div.button").html("<button>click this mf</button>");
+        });
+     
+    </script>
+</body>
+</html>
