@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover</title>
+    <style>
+        body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+}
+
+.hover{
+    width: 250px;
+    height: 150px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 20px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.hover:hover{
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(99,102,241,0.5);
+}
+    </style>
+</head>
+<body>
+   <div class="hover">
+        Hover Me
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("div.hover").on("mouseenter",function(){
+                console.log("this was hovered recently:")
+            })
+        })
+    </script>
+</body>
+</html>
