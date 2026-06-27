@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+</head>
+
+<body>
+    <h1 class="class1" id="id1">
+        hello world!
+    </h1>
+    <p id="id2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quasi perspiciatis officiis sapiente
+        cumque at ad quidem quos. Nam labore, optio beatae eligendi harum totam. Nobis velit quaerat impedit quisquam!
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed enim? Impedit qui nobis id enim placeat
+        voluptas laborum dolorem eius ipsa incidunt doloremque, corrupti quidem iusto in explicabo accusamus!</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("h1,p").text("this was changed");
+            $("#id2").text("this is again changed ");
+            $('.class1').html("<u> HEllO WORLD </u>");
+        })
+
+    </script>
+</body>
+
+</html>
