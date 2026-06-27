@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fadeToggle</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <button>click</button>
+    <div class="box"></div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").on("click",function(){
+                $(".box").fadeToggle();
+            });
+        });
+        
+    </script>
+</body>
+</html>
